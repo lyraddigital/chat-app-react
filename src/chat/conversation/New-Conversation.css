@@ -1,0 +1,23 @@
+#new-message-container {
+    background: #0048AA;
+  }
+  
+  #new-message-container {
+    display: grid;
+    grid: 40px / 40px;
+    align-content: center;
+    grid-area: new-message-container;
+    border-top: 1px solid rgba(0,0,0,0.25);
+    border-radius: 0 0 0 10px;
+    padding: 0 15px;
+  }
+  
+  #new-message-container a {
+    display: grid;
+    place-content: center center;
+    background: #eee;
+    border-radius: 100%;
+    color: #002C88;
+    text-decoration: none;
+    font-size: 3.6rem;
+  }
