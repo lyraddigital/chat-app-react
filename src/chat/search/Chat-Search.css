@@ -1,0 +1,30 @@
+#search-container {
+    display: grid;
+    align-items: center;
+    grid-area: search-container;
+    background: #0048AA;
+    padding: 0 20px;
+    border-radius: 10px 0 0 0;
+    box-shadow: 0 1px 3px -1px rgba(0,0,0,0.75);
+    z-index: 1;
+}
+  
+#search-container input {
+    color: #eee;
+    outline: none;
+    font-weight: bold;
+    border-radius: 2px;
+    height: 30px;
+    border: 0;
+    padding-left: 48px;
+    padding-right: 20px;
+    font-size: 1.4rem;
+    background: url('../../images/search/search.svg') no-repeat rgba(255, 255, 255, 0.3);
+    background-position: 15px center;
+    background-size: 20px 20px;
+}
+  
+#search-container input::placeholder {
+    color: #ddd;
+    font-weight: bold;
+}
