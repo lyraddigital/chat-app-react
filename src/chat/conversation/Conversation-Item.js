@@ -1,13 +1,12 @@
 import React from 'react';
+import classNames from 'classnames';
 
 import './Conversation-Item.css';
 
 const ConversationItem = (props) => {
-    let className = 'conversation';
-
-    if (props.isActive) {
-        className += ' active';
-    }
+    const className = classNames('conversation', {
+        'active': props.isActive
+    });
 
     return (
         <div className={className}>
