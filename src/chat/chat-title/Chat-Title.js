@@ -2,10 +2,10 @@ import React from 'react';
 
 import './Chat-Title.css';
 
-function ChatTitle() {
+const ChatTitle = (props) => {
     return (
         <div id="chat-title">
-            <span>Daryl Duckmanton</span>
+            <span>{props.selectedConversation.title}</span>
             <img src={require("../../images/icons/trash-logo.svg")} alt="Delete Conversation" />
         </div>
     );

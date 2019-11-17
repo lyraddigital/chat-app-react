@@ -12,9 +12,10 @@
     padding: 0 15px;
   }
   
-  #new-message-container a {
-    display: grid;
-    place-content: center center;
+  #new-message-container button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: #eee;
     border-radius: 100%;
     color: #002C88;
