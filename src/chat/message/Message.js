@@ -1,17 +1,16 @@
 import React from 'react';
+import classNames from 'classnames';
 
 import './Message.css';
 
 const Message = (props) => {
-    let messageClass = 'message-row';
-    let imageThumbnail = null;
-
-    if (props.isMyMessage) {
-        messageClass += ' you-message';
-    } else {
-        messageClass += ' other-message';
-        imageThumbnail = <img src={props.message.imageUrl} alt={props.message.imageAlt} />;
-    }
+    const messageClass = classNames('message-row', {
+        'you-message': props.isMyMessage,
+        'other-message': !props.isMyMessage
+    });
+    
+    const imageThumbnail = 
+        props.isMyMessage ? null : <img src={props.message.imageUrl} alt={props.message.imageAlt} />;
 
     return (
         <div className={messageClass}>
