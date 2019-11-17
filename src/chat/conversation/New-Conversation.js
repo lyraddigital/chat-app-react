@@ -5,7 +5,7 @@ import './New-Conversation.css';
 function NewConversation() {
     return (
         <div id="new-message-container">
-            <span>+</span>
+            <button>+</button>
         </div>
     );
 }

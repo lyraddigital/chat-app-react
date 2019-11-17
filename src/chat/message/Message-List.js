@@ -1,27 +1,21 @@
 import React from 'react';
 
+import Message from './Message';
 import './Message-List.css';
 
-function MessageList() {
+const MessageList = (props) => {
+    const messageItems = props.messages.map((message, index) => {
+        return <Message 
+            key={index}
+            isMyMessage={message.isMyMessage}
+            message={message} />;
+    });
+
     return (
         <div id="chat-message-list">
-            <div className="message-row you-message">
-                <div className="message-content">
-                    <div className="message-text">Ok then</div>
-                    <div className="message-time">Apr 16</div>
-                </div>
-            </div>
-            <div className="message-row other-message">
-                <div className="message-content">
-                    <img src={require("../../images/profiles/daryl.png")} alt="Daryl Duckmanton" />
-                    <div className="message-text">
-                        Yeah I think it's best we do that. Otherwise things won't work well at all. 
-                        I'm adding more text here to test the sizing of the speech bubble and the 
-                        wrapping of it too.
-                    </div>
-                    <div className="message-time">Apr 16</div>
-                </div>
-            </div>
+            {messageItems}
+            {/*
+            
             <div className="message-row you-message">
                 <div className="message-content">
                     <div className="message-text">
@@ -83,7 +77,7 @@ function MessageList() {
                     </div>
                     <div className="message-time">Apr 13</div>
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 }

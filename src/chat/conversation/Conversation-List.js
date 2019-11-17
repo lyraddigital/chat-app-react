@@ -1,34 +1,21 @@
 import React from 'react';
 
+import ConversationItem from './Conversation-Item';
 import './Conversation-List.css';
 
-function ConversationList() {
+const ConversationList = (props) => {
+    const selectedConversationIndex = 0;
+    const conversationItems = props.conversations.map((conversation, index) => {
+        return <ConversationItem 
+            key={index}
+            isActive={index === selectedConversationIndex }
+            conversation={conversation} />;
+    });
+
     return (
         <div id="conversation-list">
-            <div className="conversation active">
-                <img src={require("../../images/profiles/daryl.png")} alt="Daryl Duckmanton" />
-                <div className="title-text">Daryl Duckmanton</div>
-                <div className="created-date">Apr 16</div>
-                <div className="conversation-message">
-                    This is a message
-                </div>
-            </div>
-            <div className="conversation">
-                <img src={require("../../images/profiles/kim.jpeg")} alt="Kim O'Neil" />
-                <div className="title-text">Kim O'Neil</div>
-                <div className="created-date">2 days ago</div>
-                <div className="conversation-message">
-                    Very funny
-                </div>
-            </div>
-            <div className="conversation">
-                <img src={require("../../images/profiles/john.jpeg")} alt="John Anderson" />
-                <div className="title-text">John Anderson</div>
-                <div className="created-date">1 week ago</div>
-                <div className="conversation-message">
-                    Yes I love how Python does that
-                </div>
-            </div>
+            {conversationItems}
+{/*             
             <div className="conversation">
                 <img src={require("../../images/profiles/ben.png")} alt="Ben Smith" />
                 <div className="title-text">Ben Smith</div>
@@ -76,7 +63,7 @@ function ConversationList() {
                 <div className="conversation-message">
                     Thank you. I appreciate that.
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 }
