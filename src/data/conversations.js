@@ -291,4 +291,4 @@ export const conversations = [
     }
 ];
 
-export const selectedConversation = conversations[5];
+export const selectedConversation = conversations[0];
