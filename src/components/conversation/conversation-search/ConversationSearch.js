@@ -1,8 +1,8 @@
 import React from 'react';
 
-import './Conversation-Search.css';
+import './ConversationSearch.css';
 
-function ChatSearch() {
+function ConversationSearch() {
     return (
         <div id="search-container">
             <input type="text" placeholder="Search" />
@@ -10,4 +10,4 @@ function ChatSearch() {
     );
 }
 
-export default ChatSearch;
+export default ConversationSearch;
