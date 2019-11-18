@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import './Conversation-Item.css';
+import './ConversationItem.css';
 
 const ConversationItem = ({ conversation, isActive }) => {
     const className = classNames('conversation', {

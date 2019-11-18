@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import ConversationSearch from '../conversation/Conversation-Search';
-import ConversationList from '../conversation/Conversation-List';
-import NewConversation from '../conversation/New-Conversation';
-import ChatTitle from '../chat-title/Chat-Title';
-import MessageList from '../message/Message-List';
-import ChatForm from '../chat-form/Chat-Form';
+import ConversationSearch from '../../components/conversation/conversation-search/ConversationSearch';
+import ConversationList from '../../components/conversation/conversation-list/ConversationList';
+import NewConversation from '../../components/conversation/new-conversation/NewConversation';
+import ChatTitle from '../../components/chat-title/ChatTitle';
+import MessageList from '../../components/message/MessageList';
+import ChatForm from '../../components/chat-form/Chat-Form';
 import { conversations, selectedConversation } from '../../data/conversations';
 
-import './Chat-Shell.css';
+import './ChatShell.css';
 
 const ChatShell = () => {
     const [selectedConvo] = useState(selectedConversation);

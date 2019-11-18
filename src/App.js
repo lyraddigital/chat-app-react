@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import ChatShell from './chat/shell/Chat-Shell';
+import ChatShell from './containers/shell/ChatShell';
 
 function App() {
   return (

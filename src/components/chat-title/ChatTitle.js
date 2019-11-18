@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './Chat-Title.css';
+import './ChatTitle.css';
 
 const ChatTitle = ({ selectedConversation }) => {
     return (

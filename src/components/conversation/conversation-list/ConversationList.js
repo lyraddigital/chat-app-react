@@ -1,7 +1,7 @@
 import React from 'react';
 
-import ConversationItem from './Conversation-Item';
-import './Conversation-List.css';
+import ConversationItem from '../conversation-item/ConversationItem';
+import './ConversationList.css';
 
 const ConversationList = ({ conversations, selectedConversationId }) => {
     const conversationItems = conversations.map((conversation) => {

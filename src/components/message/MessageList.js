@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Message from './Message';
-import './Message-List.css';
+import './MessageList.css';
 
 const MessageList = ({ messages }) => {
     const messageItems = messages.map((message, index) => {
