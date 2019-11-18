@@ -4,11 +4,10 @@ import ConversationItem from './Conversation-Item';
 import './Conversation-List.css';
 
 const ConversationList = (props) => {
-    const selectedConversationIndex = 0;
-    const conversationItems = props.conversations.map((conversation, index) => {
+    const conversationItems = props.conversations.map((conversation) => {
         return <ConversationItem 
-            key={index}
-            isActive={index === selectedConversationIndex }
+            key={conversation.id}
+            isActive={conversation.id === props.selectedConversationId }
             conversation={conversation} />;
     });
 
