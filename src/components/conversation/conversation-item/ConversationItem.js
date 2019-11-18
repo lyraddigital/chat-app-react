@@ -3,13 +3,7 @@ import classNames from 'classnames';
 
 import './ConversationItem.css';
 
-const ConversationItem = (
-    { 
-        conversation, 
-        isActive,
-        onConversationItemSelected
-    }
-) => {
+const ConversationItem = ({ conversation, isActive, onConversationItemSelected }) => {
     const className = classNames('conversation', {
         'active': isActive
     });

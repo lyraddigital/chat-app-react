@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { conversationChanged } from '../../actions';
+import { conversationChanged } from '../../store/actions';
 import ConversationSearch from '../../components/conversation/conversation-search/ConversationSearch';
 import ConversationList from '../../components/conversation/conversation-list/ConversationList';
 import NewConversation from '../../components/conversation/new-conversation/NewConversation';
@@ -11,12 +11,7 @@ import ChatForm from '../../components/chat-form/Chat-Form';
 
 import './ChatShell.css';
 
-const ChatShell = (
-    {
-        conversations, 
-        selectedConversation,
-        conversationChanged
-    }) => {
+const ChatShell = ({ conversations, selectedConversation, conversationChanged }) => {
     return (
         <div id="chat-container">
             <ConversationSearch />

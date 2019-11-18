@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Chat-Form.css';
 
-function ChatForm() {
+const ChatForm = () => {
     return (
         <div id="chat-form">
             <img src={require("../../images/icons/attachment-logo.svg")} alt="Add Attachment" />
