@@ -24,13 +24,15 @@ const ChatShell = ({
             <ConversationList
                 onConversationItemSelected={conversationChanged}
                 conversations={conversations}
-                selectedConversationId={selectedConversation.id} />
+                selectedConversation={selectedConversation} />
             <NewConversation />
             <ChatTitle 
                 selectedConversation={selectedConversation}
                 onDeleteConversation={onDeleteConversation} />
-            <MessageList messages={selectedConversation.messages} />
-            <ChatForm onMessageSubmitted={onMessageSubmitted} />
+            <MessageList selectedConversation={selectedConversation} />
+            <ChatForm 
+                selectedConversation={selectedConversation}
+                onMessageSubmitted={onMessageSubmitted} />
         </div>
     );
 }
