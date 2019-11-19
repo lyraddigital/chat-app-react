@@ -308,38 +308,47 @@ const conversationsReducer = (state = initialState, action) => {
         return newState;
       }
       case 'DELETE_CONVERSATION': {
-        const newState = { ...state };
-        let selectedConversationIndex = 
-            newState.conversations.findIndex(c => c.id === newState.selectedConversation.id);
-        newState.conversations.splice(selectedConversationIndex, 1);
+        if (state.selectedConversation) {
+            const newState = { ...state };
 
-        if (newState.conversations.length > 0) {
-            if (selectedConversationIndex > 0) {
-                --selectedConversationIndex;
+            let selectedConversationIndex = 
+                newState.conversations.findIndex(c => c.id === newState.selectedConversation.id);
+            newState.conversations.splice(selectedConversationIndex, 1);
+
+            if (newState.conversations.length > 0) {
+                if (selectedConversationIndex > 0) {
+                    --selectedConversationIndex;
+                }
+        
+                newState.selectedConversation = newState.conversations[selectedConversationIndex];
+            } else {
+                newState.selectedConversation = null;
             }
-    
-            newState.selectedConversation = newState.conversations[selectedConversationIndex];
-        } else {
-            newState.selectedConversation = null;
-        }
 
-        return newState;
+            return newState;
+        }
+        
+        return state;
       }
       case 'NEW_MESSAGE_ADDED': {
-        const newState = { ...state };
-        newState.selectedConversation = { ...newState.selectedConversation };
-        
-        newState.selectedConversation.messages.unshift(
-            {
-                imageUrl: null,
-                imageAlt: null,
-                messageText: action.textMessage,
-                createdAt: 'Apr 16',
-                isMyMessage: true
-            },
-        )
+          if (state.selectedConversation) {
+            const newState = { ...state };
+            newState.selectedConversation = { ...newState.selectedConversation };
+            
+            newState.selectedConversation.messages.unshift(
+                {
+                    imageUrl: null,
+                    imageAlt: null,
+                    messageText: action.textMessage,
+                    createdAt: 'Apr 16',
+                    isMyMessage: true
+                },
+            )
+    
+            return newState;
+          }
 
-        return newState;
+          return state;
       }
       default:
         return state;
