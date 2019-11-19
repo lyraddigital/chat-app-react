@@ -9,8 +9,7 @@ const Message = ({ isMyMessage, message }) => {
         'other-message': !isMyMessage
     });
     
-    const imageThumbnail = 
-        isMyMessage ? null : <img src={message.imageUrl} alt={message.imageAlt} />;
+    const imageThumbnail = isMyMessage ? null : <img src={message.imageUrl} alt={message.imageAlt} />;
 
     return (
         <div className={messageClass}>

@@ -2,7 +2,7 @@ import React from 'react';
 
 import './NewConversation.css';
 
-function NewConversation() {
+const NewConversation = () => {
     return (
         <div id="new-message-container">
             <button>+</button>

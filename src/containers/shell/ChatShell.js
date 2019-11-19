@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { conversationChanged } from '../../actions';
+import { conversationChanged, newMessageAdded, conversationDeleted } from '../../store/actions';
 import ConversationSearch from '../../components/conversation/conversation-search/ConversationSearch';
 import ConversationList from '../../components/conversation/conversation-list/ConversationList';
 import NewConversation from '../../components/conversation/new-conversation/NewConversation';
@@ -11,12 +11,13 @@ import ChatForm from '../../components/chat-form/Chat-Form';
 
 import './ChatShell.css';
 
-const ChatShell = (
-    {
-        conversations, 
-        selectedConversation,
-        conversationChanged
-    }) => {
+const ChatShell = ({ 
+    conversations, 
+    selectedConversation, 
+    conversationChanged,
+    onMessageSubmitted,
+    onDeleteConversation
+}) => {
     return (
         <div id="chat-container">
             <ConversationSearch />
@@ -25,9 +26,11 @@ const ChatShell = (
                 conversations={conversations}
                 selectedConversationId={selectedConversation.id} />
             <NewConversation />
-            <ChatTitle selectedConversation={selectedConversation} />
+            <ChatTitle 
+                selectedConversation={selectedConversation}
+                onDeleteConversation={onDeleteConversation} />
             <MessageList messages={selectedConversation.messages} />
-            <ChatForm />
+            <ChatForm onMessageSubmitted={onMessageSubmitted} />
         </div>
     );
 }
@@ -40,7 +43,9 @@ const mapStateToProps = state => {
 };
   
 const mapDispatchToProps = dispatch => ({
-    conversationChanged: conversationId => dispatch(conversationChanged(conversationId))
+    conversationChanged: conversationId => dispatch(conversationChanged(conversationId)),
+    onMessageSubmitted: messageText => { dispatch(newMessageAdded(messageText)); },
+    onDeleteConversation: () => { dispatch(conversationDeleted()); }
 });
 
 export default connect(
