@@ -7,7 +7,7 @@ import ConversationList from '../../components/conversation/conversation-list/Co
 import NewConversation from '../../components/conversation/new-conversation/NewConversation';
 import ChatTitle from '../../components/chat-title/ChatTitle';
 import MessageList from '../../components/message/MessageList';
-import ChatForm from '../../components/chat-form/Chat-Form';
+import ChatForm from '../../components/chat-form/ChatForm';
 
 import './ChatShell.css';
 
