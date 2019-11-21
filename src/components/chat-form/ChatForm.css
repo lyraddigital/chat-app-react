@@ -27,7 +27,7 @@
   margin-left: 15px;
 }
 
-button {
+#chat-form button {
   height: 51px;
   flex: 0 0 90px;
   padding: 0 10px;

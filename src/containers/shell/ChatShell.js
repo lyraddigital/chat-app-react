@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import { conversationChanged, newMessageAdded, conversationDeleted } from '../../store/actions';
 import ConversationSearch from '../../components/conversation/conversation-search/ConversationSearch';
+import NoConversations from '../../components/conversation/no-conversations/NoConversations';
 import ConversationList from '../../components/conversation/conversation-list/ConversationList';
 import NewConversation from '../../components/conversation/new-conversation/NewConversation';
 import ChatTitle from '../../components/chat-title/ChatTitle';
@@ -18,6 +19,20 @@ const ChatShell = ({
     onMessageSubmitted,
     onDeleteConversation
 }) => {
+    let conversationContent = (
+        <>
+            <NoConversations></NoConversations>
+        </>
+    );
+
+    if (conversations.length > 0) {
+        conversationContent = (
+            <>
+                <MessageList selectedConversation={selectedConversation} />
+            </>
+        );
+    }
+
     return (
         <div id="chat-container">
             <ConversationSearch />
@@ -29,7 +44,7 @@ const ChatShell = ({
             <ChatTitle 
                 selectedConversation={selectedConversation}
                 onDeleteConversation={onDeleteConversation} />
-            <MessageList selectedConversation={selectedConversation} />
+            {conversationContent}
             <ChatForm 
                 selectedConversation={selectedConversation}
                 onMessageSubmitted={onMessageSubmitted} />
