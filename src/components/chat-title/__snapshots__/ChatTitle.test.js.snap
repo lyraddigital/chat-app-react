@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Chat title loads with correct title 1`] = `
+<div
+  id="chat-title"
+>
+  <span>
+    My Conversation
+  </span>
+  <img
+    alt="Delete Conversation"
+    onClick={[Function]}
+    src={
+      Object {
+        "ReactComponent": Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "render": [Function],
+        },
+        "__esModule": true,
+        "default": "trash-logo.svg",
+      }
+    }
+  />
+</div>
+`;

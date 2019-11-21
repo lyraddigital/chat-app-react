@@ -1,0 +1,489 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App loads with default state 1`] = `
+<div
+  id="chat-container"
+>
+  <div
+    id="search-container"
+  >
+    <input
+      placeholder="Search"
+      type="text"
+    />
+  </div>
+  <div
+    id="conversation-list"
+  >
+    <div
+      className="conversation"
+      onClick={[Function]}
+    >
+      <img
+        alt="Daryl Duckmanton"
+        src="daryl.png"
+      />
+      <div
+        className="title-text"
+      >
+        Daryl Duckmanton
+      </div>
+      <div
+        className="created-date"
+      >
+        Apr 16
+      </div>
+      <div
+        className="conversation-message"
+      >
+        This is a message
+      </div>
+    </div>
+    <div
+      className="conversation active"
+      onClick={[Function]}
+    >
+      <img
+        alt="Kim O'Neil"
+        src="kim.jpeg"
+      />
+      <div
+        className="title-text"
+      >
+        Kim O'Neil
+      </div>
+      <div
+        className="created-date"
+      >
+        Oct 20
+      </div>
+      <div
+        className="conversation-message"
+      >
+        Ok fair enough. Well good talking to you.
+      </div>
+    </div>
+    <div
+      className="conversation"
+      onClick={[Function]}
+    >
+      <img
+        alt="John Anderson"
+        src="john.jpeg"
+      />
+      <div
+        className="title-text"
+      >
+        John Anderson
+      </div>
+      <div
+        className="created-date"
+      >
+        1 week ago
+      </div>
+      <div
+        className="conversation-message"
+      >
+        Yes I love how Python does that
+      </div>
+    </div>
+    <div
+      className="conversation"
+      onClick={[Function]}
+    >
+      <img
+        alt="Ben Smith"
+        src="ben.png"
+      />
+      <div
+        className="title-text"
+      >
+        Ben Smith
+      </div>
+      <div
+        className="created-date"
+      >
+        2:49 PM
+      </div>
+      <div
+        className="conversation-message"
+      >
+        Yeah Miami Heat are done
+      </div>
+    </div>
+    <div
+      className="conversation"
+      onClick={[Function]}
+    >
+      <img
+        alt="Douglas Johannasen"
+        src="douglas.png"
+      />
+      <div
+        className="title-text"
+      >
+        Douglas Johannasen
+      </div>
+      <div
+        className="created-date"
+      >
+        6:14 PM
+      </div>
+      <div
+        className="conversation-message"
+      >
+        No it does not
+      </div>
+    </div>
+    <div
+      className="conversation"
+      onClick={[Function]}
+    >
+      <img
+        alt="Jacob Manly"
+        src="jacob.png"
+      />
+      <div
+        className="title-text"
+      >
+        Jacob Manly
+      </div>
+      <div
+        className="created-date"
+      >
+        3 secs ago
+      </div>
+      <div
+        className="conversation-message"
+      >
+        Just be very careful doing that
+      </div>
+    </div>
+    <div
+      className="conversation"
+      onClick={[Function]}
+    >
+      <img
+        alt="Stacey Wilson"
+        src="stacey.jpeg"
+      />
+      <div
+        className="title-text"
+      >
+        Stacey Wilson
+      </div>
+      <div
+        className="created-date"
+      >
+        30 mins ago
+      </div>
+      <div
+        className="conversation-message"
+      >
+        Awesome!!! Congratulations!!!!
+      </div>
+    </div>
+    <div
+      className="conversation"
+      onClick={[Function]}
+    >
+      <img
+        alt="Stan George"
+        src="stan.jpeg"
+      />
+      <div
+        className="title-text"
+      >
+        Stan George
+      </div>
+      <div
+        className="created-date"
+      >
+        1 week ago
+      </div>
+      <div
+        className="conversation-message"
+      >
+        Good job
+      </div>
+    </div>
+    <div
+      className="conversation"
+      onClick={[Function]}
+    >
+      <img
+        alt="Sarah Momes"
+        src="sarah.jpeg"
+      />
+      <div
+        className="title-text"
+      >
+        Sarah Momes
+      </div>
+      <div
+        className="created-date"
+      >
+        1 year ago
+      </div>
+      <div
+        className="conversation-message"
+      >
+        Thank you. I appreciate that.
+      </div>
+    </div>
+  </div>
+  <div
+    id="new-message-container"
+  >
+    <button>
+      +
+    </button>
+  </div>
+  <div
+    id="chat-title"
+  >
+    <span>
+      Kim O'Neil
+    </span>
+    <img
+      alt="Delete Conversation"
+      onClick={[Function]}
+      src={
+        Object {
+          "ReactComponent": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "render": [Function],
+          },
+          "__esModule": true,
+          "default": "trash-logo.svg",
+        }
+      }
+    />
+  </div>
+  <div
+    id="chat-message-list"
+  >
+    <div
+      className="message-row you-message"
+    >
+      <div
+        className="message-content"
+      >
+        <div
+          className="message-text"
+        >
+          Ok fair enough. Well good talking to you.
+        </div>
+        <div
+          className="message-time"
+        >
+          Oct 20
+        </div>
+      </div>
+    </div>
+    <div
+      className="message-row other-message"
+    >
+      <div
+        className="message-content"
+      >
+        <img
+          alt="Kim O'Neil"
+          src="kim.jpeg"
+        />
+        <div
+          className="message-text"
+        >
+          
+                        Not sure exactly yet. It will be next year sometime. Probably late.
+                    
+        </div>
+        <div
+          className="message-time"
+        >
+          Oct 20
+        </div>
+      </div>
+    </div>
+    <div
+      className="message-row you-message"
+    >
+      <div
+        className="message-content"
+      >
+        <div
+          className="message-text"
+        >
+          Yeah I know. But oh well. So when is the big date?
+        </div>
+        <div
+          className="message-time"
+        >
+          Oct 19
+        </div>
+      </div>
+    </div>
+    <div
+      className="message-row other-message"
+    >
+      <div
+        className="message-content"
+      >
+        <img
+          alt="Kim O'Neil"
+          src="kim.jpeg"
+        />
+        <div
+          className="message-text"
+        >
+          
+                        Well I know you like doing that stuff. But honestly I think
+                        you are already really talented. It's a shame you haven't found
+                        what you are looking for yet.
+                    
+        </div>
+        <div
+          className="message-time"
+        >
+          Oct 19
+        </div>
+      </div>
+    </div>
+    <div
+      className="message-row you-message"
+    >
+      <div
+        className="message-content"
+      >
+        <div
+          className="message-text"
+        >
+          
+                        I'm doing ok. Just working on building some applications to
+                        bulk up my resume, so I can get a better job.
+                    
+        </div>
+        <div
+          className="message-time"
+        >
+          Oct 19
+        </div>
+      </div>
+    </div>
+    <div
+      className="message-row other-message"
+    >
+      <div
+        className="message-content"
+      >
+        <img
+          alt="Kim O'Neil"
+          src="kim.jpeg"
+        />
+        <div
+          className="message-text"
+        >
+          
+                        I've just been really busy at work myself, looking to get
+                        married sometime next year too. How are you going?
+                    
+        </div>
+        <div
+          className="message-time"
+        >
+          Oct 19
+        </div>
+      </div>
+    </div>
+    <div
+      className="message-row you-message"
+    >
+      <div
+        className="message-content"
+      >
+        <div
+          className="message-text"
+        >
+          Yes it has been a little while
+        </div>
+        <div
+          className="message-time"
+        >
+          Oct 19
+        </div>
+      </div>
+    </div>
+    <div
+      className="message-row other-message"
+    >
+      <div
+        className="message-content"
+      >
+        <img
+          alt="Kim O'Neil"
+          src="kim.jpeg"
+        />
+        <div
+          className="message-text"
+        >
+          Hey!!!! Have not spoken to you for a while
+        </div>
+        <div
+          className="message-time"
+        >
+          Oct 19
+        </div>
+      </div>
+    </div>
+    <div
+      className="message-row you-message"
+    >
+      <div
+        className="message-content"
+      >
+        <div
+          className="message-text"
+        >
+          Hi Kim?
+        </div>
+        <div
+          className="message-time"
+        >
+          Oct 19
+        </div>
+      </div>
+    </div>
+  </div>
+  <form
+    id="chat-form"
+    onSubmit={[Function]}
+  >
+    <img
+      alt="Add Attachment"
+      src={
+        Object {
+          "ReactComponent": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "render": [Function],
+          },
+          "__esModule": true,
+          "default": "attachment-logo.svg",
+        }
+      }
+    />
+    <input
+      disabled={false}
+      onChange={[Function]}
+      placeholder="type a message"
+      type="text"
+      value=""
+    />
+    <button
+      disabled={false}
+      type="submit"
+    >
+      Send
+    </button>
+  </form>
+</div>
+`;
