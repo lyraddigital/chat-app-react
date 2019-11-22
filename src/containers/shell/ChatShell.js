@@ -35,7 +35,7 @@ const ChatShell = ({
 
     return (
         <div id="chat-container">
-            <ConversationSearch />
+            <ConversationSearch conversations={conversations} />
             <ConversationList
                 onConversationItemSelected={conversationChanged}
                 conversations={conversations}
