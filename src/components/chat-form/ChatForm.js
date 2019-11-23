@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import './ChatForm.css';
+import './ChatForm.scss';
 
 const ChatForm = ({ selectedConversation, onMessageSubmitted }) => {
     const [textMessage, setTextMessage] = useState('');

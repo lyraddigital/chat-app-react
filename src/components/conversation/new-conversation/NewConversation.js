@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './NewConversation.css';
+import './NewConversation.scss';
 
 const NewConversation = () => {
     return (

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './ChatTitle.css';
+import './ChatTitle.scss';
 
 const ChatTitle = ({ selectedConversation, onDeleteConversation }) => {
     let chatTitleContents = null;

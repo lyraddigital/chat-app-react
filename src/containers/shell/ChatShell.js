@@ -10,7 +10,7 @@ import ChatTitle from '../../components/chat-title/ChatTitle';
 import MessageList from '../../components/message/MessageList';
 import ChatForm from '../../components/chat-form/ChatForm';
 
-import './ChatShell.css';
+import './ChatShell.scss';
 
 const ChatShell = ({ 
     conversations, 

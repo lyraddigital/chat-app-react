@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './NoConversations.css';
+import './NoConversations.scss';
 
 const NoConversations = () => {
     return (

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './ConversationSearch.css';
+import './ConversationSearch.scss';
 
 const ConversationSearch = ({ conversations }) => {
     let searchInput = null;
