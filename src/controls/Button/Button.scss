@@ -1,5 +1,10 @@
 @import '../../styles/_colors';
 
+$button-text: lighten($accent-color, 65%);
+// $primary-color-disabled: hue($primary-color, 35%);
+$primary-color-disabled: #778eaf;
+$primary-dark-disabled: #747d8f;
+
 .primary-button {
     flex: 0 0 auto;
     background: $primary-color;
@@ -10,4 +15,8 @@
     font-size: 1.4rem;
     cursor: pointer;
     outline: none;
+
+    &:disabled {
+        background: $primary-color-disabled;
+    }
 }
