@@ -3,12 +3,10 @@ $accent-color: #EEE;
 
 $primary-dark: darken($primary-color, 8%);
 
-$shadow-border: #00000040;
 $shadow-box-color: #000000bf;
 $search-background-image-color: #ffffff4d;
 $light-grey-border: #DDD;
-$input-text-color: #330;
-$accent-text-color: #111;
+$accent-text-color: darken($accent-color, 86.67);
 
 $sky-blue: #57c1eb;
 $sky-dark-blue: #246fa8;

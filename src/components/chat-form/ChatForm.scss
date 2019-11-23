@@ -1,6 +1,8 @@
 @import '../../styles/_colors';
 
 $input-border-color: darken($accent-color, 6.5%);
+$input-text-color: darken(adjust-hue($primary-color, -155), 23.33);
+$chat-form-top-border: darken($accent-color, 12.16);
 
 #chat-form {
   display: flex;
@@ -8,15 +10,9 @@ $input-border-color: darken($accent-color, 6.5%);
   grid-area: chat-form;
   background: $accent-color;
   border-radius: 0 0 10px 0;
-  border-top: 1px solid $shadow-border;
+  border-top: 1px solid $chat-form-top-border;
   padding-left: 42px;
   padding-right: 22px;
-
-  > img {
-    cursor: pointer;
-    width: 32px;
-    height: 32px;
-  }
 
   input {
     flex: 1 0 0;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Button from '../../../controls/Button/Button';
+import Button from '../../controls/buttons/Button';
 
 import './NoConversations.scss';
 

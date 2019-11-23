@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
-import FormButton from '../../controls/Button/FormButton';
+import FormButton from '../controls/buttons/FormButton';
+import AttachmentIcon from '../controls/icons/attachment-icon/AttachmentIcon';
 
 import './ChatForm.scss';
 
@@ -21,7 +22,9 @@ const ChatForm = ({ selectedConversation, onMessageSubmitted }) => {
     if (selectedConversation) {
         formContents = (
             <>
-                <img src={require("../../images/icons/attachment-logo.svg")} alt="Add Attachment" />
+                <div title="Add Attachment">
+                    <AttachmentIcon />
+                </div>
                 <input 
                     type="text" 
                     placeholder="type a message" 

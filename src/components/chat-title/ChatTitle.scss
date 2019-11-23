@@ -1,5 +1,7 @@
 @import '../../styles/_colors';
 
+$chat-title-shadow: darken($accent-color, 75.29);
+
 #chat-title {
     display: grid;
     grid: 36px / 1fr 36px;
@@ -11,11 +13,7 @@
     font-weight: bold;
     font-size: 2.0rem;
     border-radius: 0 10px 0 0;
-    box-shadow: 0 1px 3px -1px $shadow-box-color;
+    box-shadow: 0 1px 3px -1px $chat-title-shadow;
     padding: 0 20px;
     z-index: 1;
-
-    img {
-        cursor: pointer;
-    }
 }

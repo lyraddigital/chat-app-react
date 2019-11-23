@@ -1,5 +1,7 @@
 import React from 'react';
 
+import TrashIcon from '../controls/icons/trash-icon/TrashIcon';
+
 import './ChatTitle.scss';
 
 const ChatTitle = ({ selectedConversation, onDeleteConversation }) => {
@@ -9,10 +11,9 @@ const ChatTitle = ({ selectedConversation, onDeleteConversation }) => {
         chatTitleContents = (
             <>
                 <span>{ selectedConversation.title }</span>
-                <img 
-                    src={require("../../images/icons/trash-logo.svg")} 
-                    alt="Delete Conversation"
-                    onClick={ () => { onDeleteConversation(); } } />
+                <div onClick={ () => { onDeleteConversation(); } } title="Delete Conversation">
+                    <TrashIcon />
+                </div>
             </>
         );
     }
