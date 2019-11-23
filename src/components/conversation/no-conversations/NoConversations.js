@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Button from '../../../controls/Button/Button';
+
 import './NoConversations.scss';
 
 const NoConversations = () => {
@@ -9,7 +11,7 @@ const NoConversations = () => {
                 <h2>No Conversations</h2>
                 <p>Currently you have no conversations.</p>
                 <p>To start a new conversation click the button below.</p>
-                <button onClick={null}>New Conversation</button>
+                <Button>New Conversation</Button>
             </div>
         </div>
     );

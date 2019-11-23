@@ -1,0 +1,13 @@
+@import '../../styles/_colors';
+
+.primary-button {
+    flex: 0 0 auto;
+    background: $primary-color;
+    border: 1px solid $primary-dark;
+    color: $button-text;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    outline: none;
+}

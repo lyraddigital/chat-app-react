@@ -1,9 +1,20 @@
 import React, { useState } from 'react';
 
+import FormButton from '../../controls/Button/FormButton';
+
 import './ChatForm.scss';
+
+const isMessageEmpty = (textMessage) => {
+    return adjustTextMessage(textMessage).length === 0;
+}
+
+const adjustTextMessage = (textMessage) => {
+    return textMessage.trim();
+};
 
 const ChatForm = ({ selectedConversation, onMessageSubmitted }) => {
     const [textMessage, setTextMessage] = useState('');
+    const disableButton = isMessageEmpty(textMessage);
     let formContents = null;
     let handleFormSubmit = null;
 
@@ -16,14 +27,14 @@ const ChatForm = ({ selectedConversation, onMessageSubmitted }) => {
                     placeholder="type a message" 
                     value={textMessage}
                     onChange={ (e) => { setTextMessage(e.target.value); } } />
-                <button type="submit">Send</button>
+                <FormButton disabled={ disableButton }>Send</FormButton>
             </>
         );
     
         handleFormSubmit = (e) => {
             e.preventDefault();
             
-            if (textMessage.length > 0) {
+            if (!isMessageEmpty(textMessage)) {
                 onMessageSubmitted(textMessage);
                 setTextMessage('');
             }
