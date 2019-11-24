@@ -1,7 +1,14 @@
+@import '../../node_modules/compass-sass-mixins/lib/compass/utilities/color/_contrast.sass';
+
 $primary-color: #0048AA;
 $accent-color: #EEE;
 
+$contrasted-primary-text: contrast-color($primary-color, lighten($accent-color, 10), darken($accent-color, 10));
+$contrasted-accent-text: contrast-color($accent-color, lighten($primary-color, 10), darken($primary-color, 10));
+
 $primary-dark: darken($primary-color, 8%);
+$contrasting-primary-text-color: black; // choose-contrast-color($primary-color);
+$contrasting-accent-text-color: white; // choose-contrast-color($accent-color);
 
 $shadow-box-color: #000000bf;
 $search-background-image-color: #ffffff4d;

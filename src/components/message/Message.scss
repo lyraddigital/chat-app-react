@@ -38,7 +38,7 @@ $speech-bubble-border-color: darken($accent-color, 13.18);
 
             > .message-text {
                 background: $primary-color;
-                color: $accent-color;
+                color: $contrasted-primary-text;
                 border: 1px solid $primary-color;
                 border-radius: 14px 14px 0 14px;
             }
@@ -54,7 +54,7 @@ $speech-bubble-border-color: darken($accent-color, 13.18);
 
             > .message-text {
                 background: $accent-color;
-                color: $accent-text-color;
+                color: $contrasted-accent-text;
                 border: 1px solid $speech-bubble-border-color;
                 border-radius: 14px 14px 14px 0;
             }

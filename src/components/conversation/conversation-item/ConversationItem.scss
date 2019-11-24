@@ -1,12 +1,10 @@
 @import '../../../styles/_colors';
 
-$conversation-text-color: darken($accent-color, 6.5%);
-
 .conversation {
     display: grid;
     grid-template-columns: 40px 1fr max-content;
     grid-gap: 10px;
-    color: $conversation-text-color;
+    color: $contrasted-primary-text; // $contrasting-primary-text-color;
     font-size: 1.3rem;
     border-bottom: 1px solid $primary-dark;
     padding: 20px 20px 20px 15px;
@@ -29,7 +27,6 @@ $conversation-text-color: darken($accent-color, 6.5%);
 
   .title-text {
     font-weight: bold;
-    color: $accent-color;
     padding-left: 5px;
     white-space: nowrap;
     overflow-x: hidden;
