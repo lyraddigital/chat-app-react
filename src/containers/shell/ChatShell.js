@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
-import { conversationChanged, newMessageAdded, conversationDeleted } from '../../store/actions';
+import { conversationChanged, newMessageAdded, conversationDeleted, conversationsRequested } from '../../store/actions';
 import ConversationSearch from '../../components/conversation/conversation-search/ConversationSearch';
 import NoConversations from '../../components/conversation/no-conversations/NoConversations';
 import ConversationList from '../../components/conversation/conversation-list/ConversationList';
@@ -17,8 +17,13 @@ const ChatShell = ({
     selectedConversation, 
     conversationChanged,
     onMessageSubmitted,
-    onDeleteConversation
+    onDeleteConversation,
+    loadConversations
 }) => {
+    useEffect(() => {
+        loadConversations();
+    }, [loadConversations]);
+
     let conversationContent = (
         <>
             <NoConversations></NoConversations>
@@ -62,7 +67,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => ({
     conversationChanged: conversationId => dispatch(conversationChanged(conversationId)),
     onMessageSubmitted: messageText => { dispatch(newMessageAdded(messageText)); },
-    onDeleteConversation: () => { dispatch(conversationDeleted()); }
+    onDeleteConversation: () => { dispatch(conversationDeleted()); },
+    loadConversations: () => { dispatch(conversationsRequested())}
 });
 
 export default connect(
