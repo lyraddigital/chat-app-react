@@ -1,3 +1,7 @@
+@import '../../styles/_colors';
+
+$chat-shell-background: lighten($accent-color, 65%);
+
 #chat-container {
   display: grid;
   grid:
@@ -10,6 +14,6 @@
   max-height: 800px;
   width: 100%;
   height: 95vh;
-  background: #FFF;
+  background: $chat-shell-background;
   border-radius: 10px;
 }

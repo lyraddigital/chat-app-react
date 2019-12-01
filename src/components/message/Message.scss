@@ -1,0 +1,63 @@
+@import '../../styles/_colors';
+
+$message-time-color: darken($accent-color, 46.5%);
+$speech-bubble-border-color: darken($accent-color, 13.18);
+
+.message-row {
+    display: grid;
+    grid-template-columns: 70%;
+    margin-bottom: 20px;
+
+    > .message-content {
+        display: grid;
+
+        > img {
+            border-radius: 100%;
+            grid-row: span 2;
+            width: 48px;
+            height: 48px;
+        }
+        
+        > .message-time {
+            font-size: 1.3rem;
+            color: $message-time-color;
+        }
+        
+        > .message-text {
+            padding: 9px 14px;
+            font-size: 1.6rem;
+            margin-bottom: 5px;
+        }
+    }
+
+    &.you-message {
+        justify-content: end;
+
+        > .message-content {
+            justify-items: end;
+
+            > .message-text {
+                background: $primary-color;
+                color: $contrasted-primary-text;
+                border: 1px solid $primary-color;
+                border-radius: 14px 14px 0 14px;
+            }
+        }
+    }
+
+    &.other-message {
+        justify-items: start;
+
+        > .message-content {
+            grid-template-columns: 48px 1fr;
+            grid-column-gap: 15px;
+
+            > .message-text {
+                background: $accent-color;
+                color: $contrasted-accent-text;
+                border: 1px solid $speech-bubble-border-color;
+                border-radius: 14px 14px 14px 0;
+            }
+        }
+    }
+}

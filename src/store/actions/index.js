@@ -3,6 +3,10 @@ export const conversationChanged = conversationId => ({
     conversationId
 });
 
+export const conversationsRequested = () => ({
+    type: 'CONVERSATIONS_REQUESTED'
+});
+
 export const conversationDeleted = () => ({
     type: 'DELETE_CONVERSATION'
 });

@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import './Message.css';
+import './Message.scss';
 
 const Message = ({ isMyMessage, message }) => {
     const messageClass = classNames('message-row', {

@@ -1,23 +1,26 @@
 import React from 'react';
 
-import './ChatTitle.css';
+import TrashIcon from '../controls/icons/trash-icon/TrashIcon';
+
+import './ChatTitle.scss';
 
 const ChatTitle = ({ selectedConversation, onDeleteConversation }) => {
-    let chatTitle = null;
-    let deleteConversationHandler = null;
+    let chatTitleContents = null;
 
     if (selectedConversation) {
-        chatTitle = selectedConversation.title;
-        deleteConversationHandler = () => { onDeleteConversation(); };
+        chatTitleContents = (
+            <>
+                <span>{ selectedConversation.title }</span>
+                <div onClick={ () => { onDeleteConversation(); } } title="Delete Conversation">
+                    <TrashIcon />
+                </div>
+            </>
+        );
     }
 
     return (
         <div id="chat-title">
-            <span>{chatTitle}</span>
-            <img 
-                src={require("../../images/icons/trash-logo.svg")} 
-                alt="Delete Conversation"
-                onClick={deleteConversationHandler} />
+            { chatTitleContents }
         </div>
     );
 }

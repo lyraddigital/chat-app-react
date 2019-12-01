@@ -1,0 +1,22 @@
+@import '../../../styles/_colors';
+
+$button-text: lighten($accent-color, 65%);
+$button-disabled-background: lighten(desaturate(adjust-hue($primary-color, 1), 74.07), 24.31);
+$button-disabled-border: lighten(desaturate(adjust-hue($primary-color, 5), 89.24), 17.45);
+
+.primary-button {
+    flex: 0 0 auto;
+    background: $primary-color;
+    border: 1px solid $primary-dark;
+    color: $button-text;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    outline: none;
+
+    &:disabled {
+        background: $button-disabled-background;
+        border: 1px solid $button-disabled-border;
+    }
+}

@@ -1,40 +1,52 @@
 import React, { useState } from 'react';
 
-import './ChatForm.css';
+import FormButton from '../controls/buttons/FormButton';
+import AttachmentIcon from '../controls/icons/attachment-icon/AttachmentIcon';
+
+import './ChatForm.scss';
+
+const isMessageEmpty = (textMessage) => {
+    return adjustTextMessage(textMessage).length === 0;
+}
+
+const adjustTextMessage = (textMessage) => {
+    return textMessage.trim();
+};
 
 const ChatForm = ({ selectedConversation, onMessageSubmitted }) => {
     const [textMessage, setTextMessage] = useState('');
-    let handleInputChange = null;
+    const disableButton = isMessageEmpty(textMessage);
+    let formContents = null;
     let handleFormSubmit = null;
-    let disabledInputs = false;
 
     if (selectedConversation) {
-        handleInputChange = (e) => {
-            setTextMessage(e.target.value);
-        };
+        formContents = (
+            <>
+                <div title="Add Attachment">
+                    <AttachmentIcon />
+                </div>
+                <input 
+                    type="text" 
+                    placeholder="type a message" 
+                    value={textMessage}
+                    onChange={ (e) => { setTextMessage(e.target.value); } } />
+                <FormButton disabled={ disableButton }>Send</FormButton>
+            </>
+        );
     
         handleFormSubmit = (e) => {
             e.preventDefault();
             
-            onMessageSubmitted(textMessage);
-            setTextMessage('');
+            if (!isMessageEmpty(textMessage)) {
+                onMessageSubmitted(textMessage);
+                setTextMessage('');
+            }
         };
-    } else {
-        disabledInputs = true;
     }
 
     return (
         <form id="chat-form" onSubmit={handleFormSubmit}>
-            <img src={require("../../images/icons/attachment-logo.svg")} alt="Add Attachment" />
-            <input 
-                type="text" 
-                placeholder="type a message" 
-                value={textMessage}
-                disabled={disabledInputs}
-                onChange={handleInputChange} />
-            <button 
-                type="submit"
-                disabled={disabledInputs}>Send</button>
+            {formContents}
         </form> 
     );
 }

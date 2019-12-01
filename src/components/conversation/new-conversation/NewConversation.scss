@@ -1,0 +1,29 @@
+@import '../../../styles/_colors';
+
+$container-top-border: darken($primary-color, 27.84);
+
+#new-message-container {
+  display: grid;
+  grid: 40px / 40px;
+  align-content: center;
+  grid-area: new-message-container;
+  background: $primary-color;
+  border-top: 1px solid $container-top-border;
+  border-radius: 0 0 0 10px;
+  padding: 0 15px;
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $accent-color;
+    border-radius: 100%;
+    color: $primary-dark;
+    text-decoration: none;
+    font-size: 3.6rem;
+    line-height: 3.6rem;
+    outline: none;
+    border: none;
+    cursor: pointer;
+  }
+}
