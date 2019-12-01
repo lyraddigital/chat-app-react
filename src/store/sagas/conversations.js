@@ -96,83 +96,7 @@ const conversations = [
         title: 'Kim O\'Neil',
         createdAt: 'Oct 20',
         latestMessageText: 'Ok fair enough. Well good talking to you.',
-        messages: [
-            {
-                imageUrl: null,
-                imageAlt: null,
-                messageText: 'Ok fair enough. Well good talking to you.',
-                createdAt: 'Oct 20',
-                isMyMessage: true
-            },
-            {
-                imageUrl: require('../../images/profiles/kim.jpeg'),
-                imageAlt: 'Kim O\'Neil',
-                messageText: `
-                    Not sure exactly yet. It will be next year sometime. Probably late.
-                `,
-                createdAt: 'Oct 20',
-                isMyMessage: false
-            },
-            {
-                imageUrl: null,
-                imageAlt: null,
-                messageText: 'Yeah I know. But oh well. So when is the big date?',
-                createdAt: 'Oct 19',
-                isMyMessage: true
-            },
-            {
-                imageUrl: require('../../images/profiles/kim.jpeg'),
-                imageAlt: 'Kim O\'Neil',
-                messageText: `
-                    Well I know you like doing that stuff. But honestly I think
-                    you are already really talented. It's a shame you haven't found
-                    what you are looking for yet.
-                `,
-                createdAt: 'Oct 19',
-                isMyMessage: false
-            },
-            {
-                imageUrl: null,
-                imageAlt: null,
-                messageText: `
-                    I'm doing ok. Just working on building some applications to
-                    bulk up my resume, so I can get a better job.
-                `,
-                createdAt: 'Oct 19',
-                isMyMessage: true
-            },
-            {
-                imageUrl: require('../../images/profiles/kim.jpeg'),
-                imageAlt: 'Kim O\'Neil',
-                messageText: `
-                    I've just been really busy at work myself, looking to get
-                    married sometime next year too. How are you going?
-                `,
-                createdAt: 'Oct 19',
-                isMyMessage: false
-            },
-            {
-                imageUrl: null,
-                imageAlt: null,
-                messageText: 'Yes it has been a little while',
-                createdAt: 'Oct 19',
-                isMyMessage: true
-            },
-            {
-                imageUrl: require('../../images/profiles/kim.jpeg'),
-                imageAlt: 'Kim O\'Neil',
-                messageText: 'Hey!!!! Have not spoken to you for a while',
-                createdAt: 'Oct 19',
-                isMyMessage: false
-            },
-            {
-                imageUrl: null,
-                imageAlt: null,
-                messageText: 'Hi Kim?',
-                createdAt: 'Oct 19',
-                isMyMessage: true
-            }
-        ]
+        messages: []
     },
     {
         id: '3', 
@@ -181,15 +105,7 @@ const conversations = [
         title: 'John Anderson',
         createdAt: '1 week ago',
         latestMessageText: 'Yes I love how Python does that',
-        messages: [
-            {
-                imageUrl: null,
-                imageAlt: null,
-                messageText: 'Hi',
-                createdAt: '1 week ago',
-                isMyMessage: true
-            }
-        ]
+        messages: []
     },
     { 
         id: '4',
@@ -198,15 +114,7 @@ const conversations = [
         title: 'Ben Smith',
         createdAt: '2:49 PM',
         latestMessageText: 'Yeah Miami Heat are done',
-        messages: [
-            {
-                imageUrl: null,
-                imageAlt: null,
-                messageText: 'Hi',
-                createdAt: '2:49',
-                isMyMessage: true
-            }
-        ]
+        messages: []
     },
     { 
         id: '5',
@@ -215,15 +123,7 @@ const conversations = [
         title: 'Douglas Johannasen',
         createdAt: '6:14 PM',
         latestMessageText: 'No it does not',
-        messages: [
-            {
-                imageUrl: null,
-                imageAlt: null,
-                messageText: 'Hi',
-                createdAt: '6:14 PM',
-                isMyMessage: true
-            }
-        ]
+        messages: []
     },
     { 
         id: '6',
@@ -232,15 +132,7 @@ const conversations = [
         title: 'Jacob Manly',
         createdAt: '3 secs ago',
         latestMessageText: 'Just be very careful doing that',
-        messages: [
-            {
-                imageUrl: null,
-                imageAlt: null,
-                messageText: 'Hi',
-                createdAt: '3 secs ago',
-                isMyMessage: true
-            }
-        ]
+        messages: []
     },
     { 
         id: '7',
@@ -249,15 +141,7 @@ const conversations = [
         title: 'Stacey Wilson',
         createdAt: '30 mins ago',
         latestMessageText: 'Awesome!!! Congratulations!!!!',
-        messages: [
-            {
-                imageUrl: null,
-                imageAlt: null,
-                messageText: 'Hi',
-                createdAt: '30 mins ago',
-                isMyMessage: true
-            }
-        ]
+        messages: []
     },
     { 
         id: '8',
@@ -266,15 +150,7 @@ const conversations = [
         title: 'Stan George',
         createdAt: '1 week ago',
         latestMessageText: 'Good job',
-        messages: [
-            {
-                imageUrl: null,
-                imageAlt: null,
-                messageText: 'Hi',
-                createdAt: '1 week ago',
-                isMyMessage: true
-            }
-        ]
+        messages: []
     },
     { 
         id: '9',
@@ -283,15 +159,7 @@ const conversations = [
         title: 'Sarah Momes',
         createdAt: '1 year ago',
         latestMessageText: 'Thank you. I appreciate that.',
-        messages: [
-            {
-                imageUrl: null,
-                imageAlt: null,
-                messageText: 'Hi',
-                createdAt: '1 year ago',
-                isMyMessage: true
-            }
-        ]
+        messages: []
     }
 ];
 
