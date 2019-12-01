@@ -16,17 +16,21 @@ export const newMessageAdded = textMessage => ({
     textMessage
 });
 
-export const messagesRequested = (conversationId) => ({
+export const messagesRequested = (conversationId, numberOfMessages, lastMessageId) => ({
     type: 'MESSAGES_REQUESTED',
     payload: {
-        conversationId
+        conversationId,
+        numberOfMessages,
+        lastMessageId
     }
 });
 
-export const messagesLoaded = (conversationId, messages) => ({
+export const messagesLoaded = (conversationId, messages, hasMoreMessages, lastMessageId) => ({
     type: 'MESSAGES_LOADED',
     payload: {
         conversationId,
-        messages
+        messages,
+        hasMoreMessages,
+        lastMessageId
     }
 });

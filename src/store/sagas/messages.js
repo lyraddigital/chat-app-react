@@ -1,86 +1,11 @@
 import { put, takeLatest } from 'redux-saga/effects';
 
+import { messagesLoaded } from '../actions';
+
 const messageDetails = {
-    '1': [
-        {
-            imageUrl: null,
-            imageAlt: null,
-            messageText: 'Ok then',
-            createdAt: 'Apr 16',
-            isMyMessage: true
-        },
-        {
-            imageUrl: require('../../images/profiles/daryl.png'),
-            imageAlt: 'Daryl Duckmanton',
-            messageText: `
-                Yeah I think it's best we do that. Otherwise things won't work well at all. 
-                I'm adding more text here to test the sizing of the speech bubble and the 
-                wrapping of it too.
-            `,
-            createdAt: 'Apr 16',
-            isMyMessage: false
-        },
-        {
-            imageUrl: null,
-            imageAlt: null,
-            messageText: 'Maybe we can use Jim\'s studio.',
-            createdAt: 'Apr 15',
-            isMyMessage: true
-        },
-        {
-            imageUrl: require('../../images/profiles/daryl.png'),
-            imageAlt: 'Daryl Duckmanton',
-            messageText: `
-                All I know is where I live it's too hard
-                to record because of all the street noise.
-            `,
-            createdAt: 'Apr 15',
-            isMyMessage: false
-        },
-        {
-            imageUrl: null,
-            imageAlt: null,
-            messageText: `
-                Well we need to work out sometime soon where
-                we really want to record our video course.
-            `,
-            createdAt: 'Apr 15',
-            isMyMessage: true
-        },
-        {
-            imageUrl: require('../../images/profiles/daryl.png'),
-            imageAlt: 'Daryl Duckmanton',
-            messageText: `
-                I'm just in the process of finishing off the
-                last pieces of material for the course.
-            `,
-            createdAt: 'Apr 15',
-            isMyMessage: false
-        },
-        {
-            imageUrl: null,
-            imageAlt: null,
-            messageText: 'How\'s it going?',
-            createdAt: 'Apr 13',
-            isMyMessage: true
-        },
-        {
-            imageUrl: require('../../images/profiles/daryl.png'),
-            imageAlt: 'Daryl Duckmanton',
-            messageText: ' Hey mate what\'s up?',
-            createdAt: 'Apr 13',
-            isMyMessage: false
-        },
-        {
-            imageUrl: null,
-            imageAlt: null,
-            messageText: 'Hey Daryl?',
-            createdAt: 'Apr 13',
-            isMyMessage: true
-        }
-    ],
     '2': [
         {
+            id: '1',
             imageUrl: null,
             imageAlt: null,
             messageText: 'Ok fair enough. Well good talking to you.',
@@ -88,6 +13,7 @@ const messageDetails = {
             isMyMessage: true
         },
         {
+            id: '2',
             imageUrl: require('../../images/profiles/kim.jpeg'),
             imageAlt: 'Kim O\'Neil',
             messageText: `
@@ -97,6 +23,7 @@ const messageDetails = {
             isMyMessage: false
         },
         {
+            id: '3',
             imageUrl: null,
             imageAlt: null,
             messageText: 'Yeah I know. But oh well. So when is the big date?',
@@ -104,6 +31,7 @@ const messageDetails = {
             isMyMessage: true
         },
         {
+            id: '4',
             imageUrl: require('../../images/profiles/kim.jpeg'),
             imageAlt: 'Kim O\'Neil',
             messageText: `
@@ -115,6 +43,7 @@ const messageDetails = {
             isMyMessage: false
         },
         {
+            id: '5',
             imageUrl: null,
             imageAlt: null,
             messageText: `
@@ -125,6 +54,7 @@ const messageDetails = {
             isMyMessage: true
         },
         {
+            id: '6',
             imageUrl: require('../../images/profiles/kim.jpeg'),
             imageAlt: 'Kim O\'Neil',
             messageText: `
@@ -135,6 +65,7 @@ const messageDetails = {
             isMyMessage: false
         },
         {
+            id: '7',
             imageUrl: null,
             imageAlt: null,
             messageText: 'Yes it has been a little while',
@@ -142,6 +73,7 @@ const messageDetails = {
             isMyMessage: true
         },
         {
+            id: '8',
             imageUrl: require('../../images/profiles/kim.jpeg'),
             imageAlt: 'Kim O\'Neil',
             messageText: 'Hey!!!! Have not spoken to you for a while',
@@ -149,6 +81,7 @@ const messageDetails = {
             isMyMessage: false
         },
         {
+            id: '9',
             imageUrl: null,
             imageAlt: null,
             messageText: 'Hi Kim?',
@@ -158,6 +91,7 @@ const messageDetails = {
     ],
     '3': [
         {
+            id: '1',
             imageUrl: null,
             imageAlt: null,
             messageText: 'Hi',
@@ -167,6 +101,7 @@ const messageDetails = {
     ],
     '4': [
         {
+            id: '1',
             imageUrl: null,
             imageAlt: null,
             messageText: 'Hi',
@@ -176,6 +111,7 @@ const messageDetails = {
     ],
     '5': [
         {
+            id: '1',
             imageUrl: null,
             imageAlt: null,
             messageText: 'Hi',
@@ -185,6 +121,7 @@ const messageDetails = {
     ],
     '6': [
         {
+            id: '1',
             imageUrl: null,
             imageAlt: null,
             messageText: 'Hi',
@@ -194,6 +131,7 @@ const messageDetails = {
     ],
     '7': [
         {
+            id: '1',
             imageUrl: null,
             imageAlt: null,
             messageText: 'Hi',
@@ -203,6 +141,7 @@ const messageDetails = {
     ],
     '8': [
         {
+            id: '1',
             imageUrl: null,
             imageAlt: null,
             messageText: 'Hi',
@@ -212,6 +151,7 @@ const messageDetails = {
     ],
     '9': [
         {
+            id: '1',
             imageUrl: null,
             imageAlt: null,
             messageText: 'Hi',
@@ -224,18 +164,34 @@ const messageDetails = {
 const delay = (ms) => new Promise(res => setTimeout(res, ms));
 
 const messagesSaga = function*(action) {
-    const { conversationId } = action.payload;
+    const { conversationId, numberOfMessages, lastMessageId } = action.payload;
     const messages = messageDetails[conversationId];
+    const startIndex = lastMessageId ? messages.findIndex(message => message.id === lastMessageId) + 1: 0;
+    const endIndex = startIndex + numberOfMessages;
+    const pageGroup = messages.slice(startIndex, endIndex);
+    const newLastMessageId = pageGroup.length > 0 ? pageGroup[pageGroup.length - 1].id: null;
+    const hasMoreMessages = newLastMessageId && endIndex < (messages.length - 1);
 
     yield delay(1000);
 
-    yield put({
-        type: 'MESSAGES_LOADED',
-        payload: {
-            messages,
-            conversationId
-        }
-    });
+    yield put(messagesLoaded(
+        conversationId,
+        pageGroup,
+        hasMoreMessages,
+        newLastMessageId
+    ));
+
+    if (hasMoreMessages) {
+        yield delay(1000);
+        yield put({
+            type: 'MESSAGES_REQUESTED',
+            payload: {
+                conversationId,
+                numberOfMessages,
+                lastMessageId: newLastMessageId
+            }
+        })
+    }
 }
 
 export const watchGetMessagesAsync = function*() {
