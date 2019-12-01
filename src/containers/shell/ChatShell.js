@@ -7,7 +7,7 @@ import NoConversations from '../../components/conversation/no-conversations/NoCo
 import ConversationList from '../../components/conversation/conversation-list/ConversationList';
 import NewConversation from '../../components/conversation/new-conversation/NewConversation';
 import ChatTitle from '../../components/chat-title/ChatTitle';
-import MessageList from '../../components/message/MessageList';
+import MessageList from '../message/MessageList';
 import ChatForm from '../../components/chat-form/ChatForm';
 
 import './ChatShell.scss';
@@ -33,7 +33,7 @@ const ChatShell = ({
     if (conversations.length > 0) {
         conversationContent = (
             <>
-                <MessageList selectedConversation={selectedConversation} />
+                <MessageList conversationId={selectedConversation.id} />
             </>
         );
     }

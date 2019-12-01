@@ -15,3 +15,18 @@ export const newMessageAdded = textMessage => ({
     type: 'NEW_MESSAGE_ADDED',
     textMessage
 });
+
+export const messagesRequested = (conversationId) => ({
+    type: 'MESSAGES_REQUESTED',
+    payload: {
+        conversationId
+    }
+});
+
+export const messagesLoaded = (conversationId, messages) => ({
+    type: 'MESSAGES_LOADED',
+    payload: {
+        conversationId,
+        messages
+    }
+});
