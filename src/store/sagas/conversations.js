@@ -1,5 +1,7 @@
 import { put, takeEvery } from 'redux-saga/effects';
 
+import { messagesLoaded } from '../actions';
+
 const delay = (ms) => new Promise(res => setTimeout(res, ms));
 
 const conversations = [
@@ -165,6 +167,8 @@ const conversations = [
 
 export const conversationsSaga = function*() {
     yield delay(1000);
+    yield put(messagesLoaded(conversations[0].id, conversations[0].messages, false, null));
+
     yield put({
         type: 'CONVERSATIONS_LOADED',
         payload: {

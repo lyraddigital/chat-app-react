@@ -6,14 +6,15 @@ import Message from '../../components/message/Message';
 import './MessageList.scss';
 
 const MessageList = ({ conversationId, getMessagesForConversation, loadMessages }) => {
-    const messages = getMessagesForConversation(conversationId);
+    const messageDetails = getMessagesForConversation(conversationId);
+    const messages = messageDetails ? messageDetails.messages: null;
     let messageItems = null;
 
     useEffect(() => {
-        if (!messages) {
-            loadMessages(conversationId)
+        if (!messageDetails) {
+            loadMessages(conversationId, null);
         }
-    }, [messages, loadMessages, conversationId])
+    }, [messageDetails, loadMessages, conversationId])
 
     if (messages && messages.length > 0) {
         messageItems = messages.map((message, index) => {
@@ -33,8 +34,7 @@ const MessageList = ({ conversationId, getMessagesForConversation, loadMessages 
 
 const mapStateToProps = state => {
     const getMessagesForConversation = conversationId => {
-        const conversationMessageDetails = state.messagesState.messageDetails[conversationId];
-        return conversationMessageDetails ? conversationMessageDetails.messages : null;
+        return state.messagesState.messageDetails[conversationId];
     }
 
     return {
@@ -43,8 +43,8 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => {
-    const loadMessages = (conversationId) => {
-        dispatch(messagesRequested(conversationId));
+    const loadMessages = (conversationId, lastMessageId) => {
+        dispatch(messagesRequested(conversationId, 5, lastMessageId));
     }
 
     return { loadMessages };

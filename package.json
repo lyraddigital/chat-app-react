@@ -35,6 +35,7 @@
   },
   "devDependencies": {
     "node-sass": "^4.13.0",
-    "react-test-renderer": "^16.12.0"
+    "react-test-renderer": "^16.12.0",
+    "redux-devtools": "^3.5.0"
   }
 }
