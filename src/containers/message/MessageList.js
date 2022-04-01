@@ -1,12 +1,19 @@
 import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
+import { connect, useDispatch, useSelector } from 'react-redux';
 
 import { messagesRequested } from '../../store/actions';
 import Message from '../../components/message/Message';
 import './MessageList.scss';
 
-const MessageList = ({ conversationId, getMessagesForConversation, loadMessages }) => {
-    const messageDetails = getMessagesForConversation(conversationId);
+
+const MessageList = ({ conversationId }) => {
+    const messageDetails = useSelector( state => 
+        state.messagesState.messageDetails[conversationId])
+    const dispatch = useDispatch();
+    const loadMessages = (conversationId, lastMessageId) => {
+        dispatch(messagesRequested(conversationId, 5, lastMessageId));
+    }
+
     const messages = messageDetails ? messageDetails.messages: null;
     let messageItems = null;
 
@@ -32,25 +39,4 @@ const MessageList = ({ conversationId, getMessagesForConversation, loadMessages 
     );
 }
 
-const mapStateToProps = state => {
-    const getMessagesForConversation = conversationId => {
-        return state.messagesState.messageDetails[conversationId];
-    }
-
-    return {
-        getMessagesForConversation
-    }
-}
-
-const mapDispatchToProps = dispatch => {
-    const loadMessages = (conversationId, lastMessageId) => {
-        dispatch(messagesRequested(conversationId, 5, lastMessageId));
-    }
-
-    return { loadMessages };
-}
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(MessageList);
+export default MessageList;
